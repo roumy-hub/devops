@@ -4,13 +4,13 @@ pipeline {
     stages {
         stage('GIT') {
             steps {
-                git branch: 'master',
+                git branch: 'main',
                     changelog: false,
                     credentialsId: 'github-https-cred',
-                    url: 'https://github.com/roumy-hub/devops'
+                    url: 'https://github.com/roumy-hub/devops.git'
             }
         }
-
+//test
         stage('MAVEN Build') {
             steps {
                 sh 'mvn clean compile'
