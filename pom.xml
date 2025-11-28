@@ -21,7 +21,7 @@
 
 		<!-- Sonar properties -->
 		<sonar.host.url>http://localhost:9000</sonar.host.url>
-		<sonar.login>${env.SONAR_TOKEN}</sonar.login>
+		<sonar.login>intellij</sonar.login>
 	</properties>
 
 	<dependencies>
