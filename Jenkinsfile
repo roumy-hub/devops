@@ -6,7 +6,7 @@ pipeline {
             steps {
                 git branch: 'main',
                     changelog: false,
-                    credentialsId: 'github-https-cred',
+                    credentialsId: 'devops',
                     url: 'https://github.com/roumy-hub/devops.git'
             }
         }
