@@ -25,6 +25,34 @@ pipeline {
                 sh'mvn sonar:sonar -Dsonar.projectKey=devops_git -Dsonar.host.url=$SONAR_HOST_URL -Dsonar.token=$SONAR_AUTH_TOKEN'
             }
         }
+        stage('Docker Build & Push') {
+            environment{
+                DOCKERHUB_USER = "maramboukeri"
+            }
+            steps {
+                script {
+                    dockerImage = docker.build("maramboukeri/devopps-app:${env.BUILD_ID}")
+                }
+            }
+        }
+
+        stage('Push Docker Image') {
+            steps {
+                script {
+                    withCredentials([
+                        usernamePassword(
+                            credentialsId: 'dockerhubcred',
+                            usernameVariable: 'DOCKER_USER',
+                            passwordVariable: 'DOCKER_PASS'
+                        )
+                    ]) {
+
+                        sh "echo $DOCKER_PASS | docker login -u $DOCKER_USER --password-stdin"
+                        sh "docker push roumyhub/devsecops-app:${env.BUILD_ID}"
+                    }
+                }
+            }
+        }
 
 
         stage('TRIVY - Filesystem Scan') {
