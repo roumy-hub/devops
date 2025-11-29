@@ -6,8 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="d1394302-d7e8-4c06-9982-cf833cdd5c13" name="Changes" comment="distributionManagement Nexus">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Jenkinsfile" beforeDir="false" afterPath="$PROJECT_DIR$/Jenkinsfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tests/java/tn/esprit/spring/secret.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/tests/java/tn/esprit/spring/secret.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -240,7 +238,7 @@
       <workItem from="1764289684970" duration="3229000" />
       <workItem from="1764322383775" duration="2423000" />
       <workItem from="1764326615457" duration="5586000" />
-      <workItem from="1764451185773" duration="1801000" />
+      <workItem from="1764451185773" duration="3893000" />
     </task>
     <task id="LOCAL-00001" summary="plugin 3.0.5">
       <created>1665242106708</created>
@@ -316,7 +314,31 @@
       <option name="project" value="LOCAL" />
       <updated>1764329097726</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="distributionManagement Nexus">
+      <option name="closed" value="true" />
+      <created>1764455483674</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1764455483674</updated>
+    </task>
+    <task id="LOCAL-00012" summary="distributionManagement Nexus">
+      <option name="closed" value="true" />
+      <created>1764455524948</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1764455524948</updated>
+    </task>
+    <task id="LOCAL-00013" summary="distributionManagement Nexus">
+      <option name="closed" value="true" />
+      <created>1764456294963</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1764456294963</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
