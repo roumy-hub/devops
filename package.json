@@ -1,0 +1,25 @@
+{
+  "name": "devops",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/roumy-hub/devops.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/roumy-hub/devops/issues"
+  },
+  "homepage": "https://github.com/roumy-hub/devops#readme",
+  "devDependencies": {
+    "eslint": "^9.39.1",
+    "eslint-plugin-security": "^3.0.1"
+  }
+}
