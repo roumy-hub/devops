@@ -37,23 +37,12 @@ pipeline {
         }
 
 
-        stage('Push Docker Image') {
-            steps {
-                script {
-                    withCredentials([
-                        usernamePassword(
-                            credentialsId: 'dockerhubcred',
-                            usernameVariable: 'DOCKER_USER',
-                            passwordVariable: 'DOCKER_PASS'
-                        )
-                    ]) {
-
-                        sh "echo $DOCKER_PASS | docker login -u $DOCKER_USER --password-stdin"
-                        sh "docker push roumyhub/devsecops-app:${env.BUILD_ID}"
-                    }
-                }
-            }
-        }
+        stage('Push image') {
+               docker.withRegistry('https://registry.hub.docker.com', 'dockerhubcred') {
+               app.push("${env.BUILD_NUMBER}")
+               app.push("latest")
+                      }
+                   }
 
         stage('GITLEAKS - Secret Scan') {
                     steps {
