@@ -55,6 +55,13 @@ pipeline {
             }
         }
 
+        stage('GITLEAKS - Secret Scan') {
+                    steps {
+                        sh '''
+                            gitleaks detect --source . --report-format json --report-path gitleaks-report.json --exit-code 1
+                        '''
+                    }
+                }
 
         stage('TRIVY - Filesystem Scan') {
     steps {
@@ -115,12 +122,6 @@ EOF
         }
     }
 }
-stage('GITLEAKS - Secret Scan') {
-            steps {
-                sh '''
-                    gitleaks detect --source . --report-format json --report-path gitleaks-report.json --exit-code 1
-                '''
-            }
-        }
+
     }
 }
