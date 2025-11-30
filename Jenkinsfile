@@ -38,11 +38,16 @@ pipeline {
 
 
         stage('Push image') {
-               docker.withRegistry('https://registry.hub.docker.com', 'dockerhubcred') {
-               app.push("${env.BUILD_NUMBER}")
-               app.push("latest")
-                      }
-                   }
+            steps {
+                script {
+                    docker.withRegistry('https://index.docker.io/v1/', 'dockerhubcred') {
+                        app.push("${env.BUILD_NUMBER}")
+                        app.push("latest")
+                    }
+                }
+            }
+        }
+
 
         stage('GITLEAKS - Secret Scan') {
                     steps {
