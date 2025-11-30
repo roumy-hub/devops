@@ -28,6 +28,7 @@ pipeline {
         stage('Docker Build & Push') {
             environment{
                 DOCKERHUB_USER = "maramboukeri"
+                DOCKERHUB_CREDENTIALS = 'dockerhubcred'
             }
             steps {
                 script {
@@ -41,8 +42,8 @@ pipeline {
             steps {
                 script {
                     docker.withRegistry('https://index.docker.io/v1/', 'dockerhubcred') {
-                        app.push("${env.BUILD_NUMBER}")
-                        app.push("latest")
+                        dockerImage.push("${env.BUILD_NUMBER}")
+                        dockerImage.push("latest")
                     }
                 }
             }
