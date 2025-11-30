@@ -23,7 +23,7 @@ pipeline {
             }
             steps{
                 sh'mvn sonar:sonar -Dsonar.projectKey=devops_git -Dsonar.host.url=$SONAR_HOST_URL
-                -Dsonar.token=$SONAR_AUTH_TOKEN -Dsonar.coverage.jacoco.xmlReportPaths=target/site/jacoco/jacoco.xml'
+                -Dsonar.token=${SONAR_AUTH_TOKEN} -Dsonar.coverage.jacoco.xmlReportPaths=target/site/jacoco/jacoco.xml'
             }
         }
         stage('Docker Build & Push') {
